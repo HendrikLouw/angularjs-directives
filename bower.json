@@ -1,0 +1,19 @@
+{
+  "name": "angularjs-directives",
+  "version": "0.0.0",
+  "authors": [
+    "Hendrik Louw <hflouw@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angularjs": "~1.2.24",
+    "angular-mocks": "~1.2.24"
+  }
+}
