@@ -14,6 +14,7 @@
   ],
   "devDependencies": {
     "angularjs": "~1.2.24",
-    "angular-mocks": "~1.2.24"
+    "angular-mocks": "~1.2.24",
+    "foundation": "~5.4.3"
   }
 }

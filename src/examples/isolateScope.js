@@ -3,8 +3,9 @@ angular.module('isolateScope', []);
 angular.module('isolateScope').directive('echo', function() {
     return {
         restrict: 'E',
-        template: '<input ng-model="secret">' +
-            '<p>{{secret}}</p>'
+        transclude: true,
+        template: '<input type="text" ng-model="secret">' +
+            '<p ng-transclude>{{secret}}</p>'
 
     }
 });
