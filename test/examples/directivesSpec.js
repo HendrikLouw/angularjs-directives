@@ -55,8 +55,13 @@ describe('Directive examples', function () {
         it('should replace the directive container with the directive template', function () {
             var element = '<replacer></replacer>';
             var result = $compile(element)($scope);
-            console.log(result);
-            expect(result[0].outerHTML).toEqual('<p class="ng-scope">This has been replaced by the replacer!</p>');
+            expect(result[0].outerHTML).toEqual('<p class="ng-scope">This has been replaced by the replacerNaToR!</p>');
         });
+    });
+
+    describe('link function', function() {
+        var element = '<linker></linker>';
+        $compile(element)($scope);
+        expect()
     });
 });
