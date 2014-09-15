@@ -23,13 +23,30 @@ angular.module('directives', []);
 
     // Isolate Scope examples
     angular.module('directives').controller('FlickrController', function($scope) {
-        $scope.url = 'skyphoto.jpg';
+        $scope.url = 'angularjs.jpeg';
+        $scope.updateURL = function(){
+            if($scope.url === "angularjs.jpeg"){
+                $scope.url = "buzzlight.jpg";
+            }
+            else{
+                $scope.url = "angularjs.jpeg";
+            }
+        }
     });
 
-    angular.module('directives').directive('photo', function() {
+    angular.module('directives').directive('customPhoto', function() {
     return {
         restrict: 'E',
-        template: '<img src="{{url}}">'
+        scope: {
+            locationName: '@',
+            location: '=',
+            updateLocation: '&'
+
+        },
+        template: '<h2>{{locationName}}: {{location}}</h2>' +
+            '<img src="{{location}}">' +
+            '<button type=submit class="primary" ng-click="updateLocation()">Why U No WoRk AngulaR??!!</button>'
+
     }
 });
 
