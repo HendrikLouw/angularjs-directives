@@ -32,9 +32,7 @@ describe('Directive examples', function () {
                 $scope: $scope
             });
 
-            var markup = angular.element(   '<div ng-controller="FlickrController">' +
-                                            '<custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>' +
-                                            '</div>');
+            var markup = angular.element('<div ng-controller="FlickrController">' + '<custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>' + '</div>');
 
             $compile(markup)($scope);
 
@@ -50,6 +48,15 @@ describe('Directive examples', function () {
             $scope.$digest();
             expect(directiveScope.location).toEqual('buzzlight.jpg');
 
+        });
+    });
+
+    describe('replace', function () {
+        it('should replace the directive container with the directive template', function () {
+            var element = '<replacer></replacer>';
+            var result = $compile(element)($scope);
+            console.log(result);
+            expect(result[0].outerHTML).toEqual('<p class="ng-scope">This has been replaced by the replacer!</p>');
         });
     });
 });
