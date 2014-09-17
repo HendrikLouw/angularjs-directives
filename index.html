@@ -2,8 +2,9 @@
 <html ng-app="dataGrid">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Data grid example</title>
+    <title>Directives, directives, directives!</title>
     <link type="text/css" rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link type="text/css" rel="stylesheet" href="app.css">
     <script src="bower_components/angularjs/angular.js"></script>
     <script src="src/dataGrid/dataGridDirective.js"></script>
 </head>
@@ -13,7 +14,12 @@
 
 <div class="row">
     <div class="large-12 columns">
-        <h1>Directives</h1>
+        <ul class="poem">
+        <li> I know I am a mystery </li>
+        <li> But after our  acquaintance, I hope you'll like me </li>
+        <li> Because, if not for me </li>
+        <li> AngularJS cannot be </li>
+    </ul>
 
     </div>
 </div>
@@ -46,11 +52,18 @@
 
     <div class="large-12 columns">
         <ul>
+            <li> Browser parses HTML into DOM tree</li>
+            <li> $compile parses DOM tree to find directives</li>
+            <li> For each directive found: run compile function and return link function</li>
+            <li> $compile returns linking function that wraps all the link functions from all the directives</li>
+            <li> linking function called where listeners, watchers are registered </li>
+            <li> compile function used for DOM manipulation before it's rendered and returning a link function. Good place to put all shared methods for all instances of the directive</li>
+            <li> link function used to register all listeners on a specific DOM element, and setup bindings to the page</li>
             <li>
                 <a href="isolateScope.html">Isolate Scope</a>
             </li>
             <li>
-                <a href="isolateScopeBinding.html">Isolate Scope Bindings</a>
+                <a href="examples.html">Isolate Scope Bindings</a>
             </li>
 
         </ul>

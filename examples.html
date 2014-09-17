@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <title>Isolate scope example</title>
     <link type="text/css" rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link type="text/css" rel="stylesheet" href="app.css">
     <script src="bower_components/angularjs/angular.js"></script>
     <script src="src/examples/directives.js"></script>
 </head>
 <body>
 
-<div ng-controller="FlickrController" ng-app="directives">
-    <custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>
+<div class="row">
+    <div class="large-12 columns">
+        <div ng-controller="FlickrController" ng-app="directives">
+            <custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>
+        </div>
+    </div>
 </div>
-
 
 </body>
 </html>

@@ -20,7 +20,7 @@ describe('Directive examples', function () {
             expect(element.text()).toEqual('New element text');
         });
 
-        it('[C] should match a class name', function () {
+        xit('[C] should match a class name', function () {
             var element = $compile('<div class="class-directive"></div>')($scope);
             expect(element.text()).toEqual('New element from class text');
         });
@@ -32,7 +32,9 @@ describe('Directive examples', function () {
                 $scope: $scope
             });
 
-            var markup = angular.element('<div ng-controller="FlickrController">' + '<custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>' + '</div>');
+            var markup = angular.element('<div ng-controller="FlickrController">' +
+                '<custom-photo location="url" location-name="url" update-location="updateURL()"></custom-photo>' +
+                '</div>');
 
             $compile(markup)($scope);
 
@@ -59,9 +61,20 @@ describe('Directive examples', function () {
         });
     });
 
-    describe('link function', function() {
-        var element = '<linker></linker>';
-        $compile(element)($scope);
-        expect()
+    describe('transclude', function() {
+        it('should add content at the ng-transclude point', function() {
+            var element = '<transcluder>' +
+                '<h3>Transcluded content wow</h3>' +
+                '<replacer></replacer>' +
+                '</transcluder>';
+            var result = $compile(element)($scope);
+            expect(result[0].outerHTML).toEqual('<transcluder class="ng-scope">' +
+                                                    '<h2>Transcluder</h2>' +
+                                                    '<div ng-transclude="">' +
+                                                        '<h3 class="ng-scope">Transcluded content wow</h3>' +
+                                                        '<p class="ng-scope">This has been replaced by the replacerNaToR!</p>' +
+                                                    '</div>' +
+                                                '</transcluder>');
+        });
     });
 });
